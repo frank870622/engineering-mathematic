@@ -19,8 +19,8 @@ xn = 0:0.1:0.5;
 h = 0.1;
 f = 4*u - 4*y;
 for i = 1:(length(xn)-1)
-    un(i+1) = un(i) + 0.1*un(i);
-    yn(i+1) = yn(i) + h*subs(f,[u,y],[un(i),yn(i)]);
+    un(i+1) = un(i) + h*subs(f,[u,y],[un(i),yn(i)]);
+    yn(i+1) = yn(i) + h*un(i);
 end
 disp([xn',yn']);
 %%
